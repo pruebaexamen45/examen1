@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Examen</title>
+  <style>
+    body {
+      background-color: #e0f0ff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      color: blue;
+      font-size: 60px;
+      text-align: center;
+    }
+
+    p {
+      font-size: 24px;
+      color: #003366;
+      width: 80%;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="titulo"></h1>
+  <p id="historia"></p>
+
+  <script>
+    const titulo = "Estoy en un examen";
+    const historiaTexto = "Respiro profundo, leo cada pregunta con calma, pienso paso a paso y confío en mis conocimientos. Puedo lograrlo si mantengo la concentración. Este momento es mío.";
+
+    let i = 0;
+    function escribirTitulo() {
+      if (i < titulo.length) {
+        document.getElementById("titulo").textContent += titulo.charAt(i);
+        i++;
+        setTimeout(escribirTitulo, 100);
+      } else {
+        escribirHistoria();
+      }
+    }
+
+    let j = 0;
+    function escribirHistoria() {
+      if (j < historiaTexto.length) {
+        document.getElementById("historia").textContent += historiaTexto.charAt(j);
+        j++;
+        setTimeout(escribirHistoria, 50);
+      }
+    }
+
+    escribirTitulo();
+  </script>
+
+</body>
+</html>
